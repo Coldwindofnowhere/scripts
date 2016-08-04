@@ -70,6 +70,11 @@ done
 
 unset p
 
+# Exports needed for perl
+
+export LD_LIBRARY_PATH="$SYSROOT/lib:/data/local/perl:/data/local/perl/lib:/data/local/perl/lib/auto:$LD_LIBRARY_PATH"
+export PERL5LIB=/data/local/perl/lib:/data/local/perl/lib/site_perl
+
 # General aliases
 
 alias ls='busybox ls --color=auto'
@@ -78,9 +83,8 @@ alias la='ls -al'
 alias dmesg='busybox dmesg -C'
 alias cls='clear'
 alias bashrc='vim /system/etc/mkshrc'
-alias sl='echo I like trains'
 alias grep='busybox grep'
-alias wget='busybox wget -c'
+alias wget='wget -c'
 alias df='df -H'
 alias cd..='cd ..'
 alias free='free -m'
@@ -90,7 +94,13 @@ alias now='date +"%T"'
 alias hist='history | grep'
 alias vim='vim -p'
 
-# Vital
+# Useless aliases
+
+alias sl='echo I like trains|lolcat'
+alias cow='cowsay derp|lolcat'
+alias nya='telnet nyancat.dakko.us'
+
+# Vital aliases
 
 alias ..="cd .."
 alias ...="cd ../.."
